@@ -1,0 +1,337 @@
+:root {
+    --lightred: hsl(356, 100%, 66%);
+    --verylightred: hsl(355, 100%, 74%);
+    --verydarkblue: hsl(208, 49%, 24%);
+    --white: hsl(0, 0%, 100%);
+    --grayishblue: hsl(240, 2%, 79%);
+    --verydarkgrayishblue: hsl(207, 13%, 34%);
+    --verydarkblackblue: hsl(240, 10%, 16%);
+    --background: linear-gradient(hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    --background2: linear-gradient(hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+    --large: 30px;
+    --normal: 22px;
+    --small: 14px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    /* z-index: 100; */
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Overpass", sans-serif;
+}
+
+header {
+    background-image: url("../images/bg-pattern-intro.svg"), var(--background);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 145%;
+    border-bottom-left-radius: 88px;
+    position: relative;
+    height: 90vh;
+}
+
+.translate {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger img {
+    transition: all 0.3s ease-in;
+}
+
+
+/* // navbar for dekstop */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 64px 0;
+}
+
+.logo {
+    height: 40px;
+    width: 104px;
+    margin-right: 68px;
+}
+
+.links>li:nth-child(2) {
+    margin: 0 30px;
+}
+
+.list-item {
+    position: relative;
+    padding: 1.3rem 0;
+    cursor: pointer;
+}
+
+.links li a {
+    color: var(--white);
+    font-size: 1.4rem;
+    opacity: 0.8;
+    transition: text 0.5s;
+}
+
+.links li i {
+    color: white;
+    margin-left: 4px;
+    transition: transform 0.3s;
+}
+
+.links .list-item:hover>a {
+    text-decoration: underline;
+}
+
+.links li:hover .card {
+    display: block;
+    padding: 3.5rem 2.5rem;
+    height: auto;
+    animation: list 0.301s ease-in forwards;
+    opacity: 1;
+}
+
+.links li:hover i {
+    transform: rotate(180deg);
+}
+
+
+/* card that displays when we hover on li item */
+
+.card {
+    width: 17rem;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 29px 0px;
+    transition: color 1s ease-in-out;
+    display: none;
+    position: absolute;
+    top: 4.1rem;
+    height: 0;
+    opacity: 0;
+    z-index: 2;
+}
+
+.card li a {
+    color: var(--verydarkblackblue);
+    text-decoration: none;
+}
+
+.card li:not(:last-child) {
+    margin-bottom: 1.3rem;
+}
+
+.card li:hover a {
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+}
+
+
+/* content */
+
+.content {
+    position: absolute;
+    text-align: center;
+    width: 100vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content h1 {
+    font-size: 6rem;
+    color: var(--white);
+}
+
+.content p {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin: 2rem 0;
+}
+
+.main-btn {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 15px;
+    background-color: var(--white);
+    color: var(--lightred);
+    border-radius: 2.5rem;
+    font-weight: 800;
+    margin: 20px;
+    padding: 18px 28px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in;
+}
+
+.login {
+    color: var(--white);
+    opacity: 0.85;
+    transition: color 0.2s ease-in-out;
+    padding: 1.7rem 4rem;
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    border-radius: 2.5rem;
+}
+
+.login:hover {
+    box-shadow: 0 0 13px rgba(0, 0, 0, 0.3);
+}
+
+#empty {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid white;
+}
+
+#empty:hover {
+    background-color: var(--white);
+    color: var(--lightred);
+}
+
+#sign-up {
+    padding: 1.7rem 4rem;
+}
+
+.main-btn:hover {
+    background-color: var(--verylightred);
+    color: var(--white);
+}
+
+@media (max-width: 1000px) {
+    .content h1 {
+        font-size: 4rem;
+    }
+    .hamburger {
+        display: block;
+    }
+    .btn {
+        display: none;
+    }
+    ul.links {
+        display: none;
+    }
+    .mobile-menu {
+        display: block;
+        position: absolute;
+        top: 15rem;
+        z-index: 100;
+        background-color: var(--white);
+        width: 35.3125rem;
+        border-radius: 1rem;
+        padding: 2.5rem 1.625rem;
+        text-align: center;
+        transform: translateY(-200%);
+        opacity: 0;
+        transition: 0.5s ease-out;
+        box-shadow: rgba(0, 0, 0, 0.3) 12px 17px 29px;
+    }
+    .mobile-list-item {
+        margin: 2.45rem 0;
+        padding: 1rem 0;
+    }
+    .mobile-list-item:hover .mobile-card {
+        animation: list 0.301s ease-in forwards;
+        display: block;
+    }
+    .mobile-list-item>a {
+        font-size: 1.75rem;
+        color: var(--verydarkblue);
+        transition: color 0.3s ease-in;
+    }
+    .mobile-list-item:hover .list-name {
+        color: var(--verydarkgrayishblue);
+    }
+    .mobile-list-item i {
+        margin-left: 4px;
+        color: var(--lightred);
+        transition: 0.3s;
+    }
+    .mobile-list-item:hover i {
+        transform: rotate(180deg);
+    }
+    .mobile-card {
+        background-color: #efeff1;
+        border-radius: 10px;
+        width: 90%;
+        margin: 1.5rem auto;
+        padding: 2rem 1.5rem;
+        display: none;
+    }
+    .mobile-card a {
+        font-size: 1.5rem;
+        color: var(--verydarkgrayishblue);
+        font-weight: 700;
+    }
+    .mobile-card li:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+    .login {
+        margin: 1rem 0;
+        color: var(--verydarkblackblue);
+    }
+    .mobile-btns {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Overpass", sans-serif;
+    }
+    #sign-in {
+        background: var(--background);
+        color: white;
+        font-weight: 700;
+    }
+    .main-btn {
+        padding: 13px 30px;
+        margin: 17px 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .mobile-menu {
+        width: 90%;
+    }
+    header {
+        height: 100vh;
+    }
+    .content h1 {
+        font-size: 4rem;
+        padding: 0 0.5rem;
+        /* width: 90%;
+        text-align: center; */
+    }
+}
+
+@media (max-height: 600px) {
+    .content h1 {
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+    .mobile-menu {
+        padding: 1.5rem;
+    }
+    .main-btn {
+        font-size: 1rem;
+    }
+}

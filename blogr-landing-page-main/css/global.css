@@ -1,0 +1,53 @@
+a,
+a:visited {
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.jc-sa {
+    justify-content: space-between;
+}
+
+.jc-c {
+    justify-content: center;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.center {
+    display: block;
+    margin: auto;
+}
+
+.translate {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@keyframes list {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    10% {
+        height: 10px;
+    }
+    30% {
+        height: 40px;
+    }
+    50% {
+        height: 100px;
+    }
+    60% {
+        height: 110px;
+    }
+    100% {
+        opacity: 1;
+        height: auto;
+    }
+}
